@@ -21,7 +21,8 @@ BASE_URL = os.getenv(
 # Flash model available on the sponsored plan. Change if the Ed post lists another.
 CHAT_MODEL = os.getenv("CHAT_MODEL", "qwen3.8-flash")
 
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# config.py lives in the project root (code/), so data/ is one level below it.
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(PROJECT_ROOT, "data")
 PAGES_DIR = os.path.join(DATA_DIR, "pages")
 SOURCES_JSON = os.path.join(DATA_DIR, "sources.json")

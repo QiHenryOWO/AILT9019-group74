@@ -9,7 +9,7 @@ import config
 
 def main():
     records = index_mod.build_index()
-    print(f"Index built: {len(records)} chunks -> {config.INDEX_PATH}")
+    print(f"Index built: {len(records['docs'])} docs -> {config.INDEX_PATH}")
 
 
 if __name__ == "__main__":
