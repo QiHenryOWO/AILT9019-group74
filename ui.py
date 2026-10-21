@@ -36,27 +36,8 @@ if not os.path.exists(config.INDEX_PATH):
 st.title("🎓 HKU Student Service Navigator")
 st.caption("Ask about libraries, CEDARS, UHS, IT, Careers, Cards, Registry, Moodle…")
 
-# Example questions (same set used by the evaluation suite).
-EXAMPLES = [
-    "How do I book a group study room at the library?",
-    "What financial assistance does CEDARS offer?",
-    "How do I apply for on-campus accommodation?",
-    "What should I do if I feel anxious and overwhelmed?",
-    "How do I reset my HKU Portal password?",
-]
-
-if "q_text" not in st.session_state:
-    st.session_state.q_text = ""
-
-st.markdown("**Try an example:**")
-ex_cols = st.columns(len(EXAMPLES))
-for i, ex in enumerate(EXAMPLES):
-    if ex_cols[i].button(ex, key=f"ex{i}"):
-        st.session_state.q_text = ex
-
 q = st.text_input(
     "Your question",
-    value=st.session_state.q_text,
     placeholder="Type a question and press Enter",
     key="main_input",
 )
