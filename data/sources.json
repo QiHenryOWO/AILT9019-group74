@@ -1,0 +1,62 @@
+[
+  {
+    "id": "library_study_rooms",
+    "title": "HKU Libraries - Study Rooms & Facilities",
+    "url": "https://lib.hku.hk/services/",
+    "file": "library_study_rooms.txt"
+  },
+  {
+    "id": "cedars_financial",
+    "title": "CEDARS - Financial Assistance",
+    "url": "https://www.cedars.hku.hk/financial",
+    "file": "cedars_financial.txt"
+  },
+  {
+    "id": "cedars_accommodation",
+    "title": "CEDARS - Accommodation Service",
+    "url": "https://www.cedars.hku.hk/acc",
+    "file": "cedars_accommodation.txt"
+  },
+  {
+    "id": "uhs_general",
+    "title": "University Health Service (UHS)",
+    "url": "https://www.uhs.hku.hk/",
+    "file": "uhs_general.txt"
+  },
+  {
+    "id": "uhs_counselling",
+    "title": "UHS - Counselling Service",
+    "url": "https://www.uhs.hku.hk/counselling/",
+    "file": "uhs_counselling.txt"
+  },
+  {
+    "id": "its_help",
+    "title": "IT Help Centre - Wi-Fi / VPN / Email",
+    "url": "https://www.its.hku.hk/help/",
+    "file": "its_help.txt"
+  },
+  {
+    "id": "careers",
+    "title": "Careers and Placement Centre",
+    "url": "https://careers.hku.hk/",
+    "file": "careers.txt"
+  },
+  {
+    "id": "cedars_student_card",
+    "title": "CEDARS - Student Card & Octopus",
+    "url": "https://www.cedars.hku.hk/student.html",
+    "file": "cedars_student_card.txt"
+  },
+  {
+    "id": "registry_records",
+    "title": "Registry - Academic Records & Transcripts",
+    "url": "https://www.reg.hku.hk/",
+    "file": "registry_records.txt"
+  },
+  {
+    "id": "moodle",
+    "title": "Moodle - Learning Management System",
+    "url": "https://moodle.hku.hk/",
+    "file": "moodle.txt"
+  }
+]

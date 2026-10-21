@@ -1,0 +1,9 @@
+[SAMPLE CURATED EXCERPT - replace with live-fetched content before final submission]
+Service: IT Help Centre - Wi-Fi / VPN / Email
+Source URL: https://www.its.hku.hk/help/
+
+The IT Help Centre supports students with campus Wi-Fi, the student VPN, university email, and software. To connect to HKU Wi-Fi, select the eduroam or HKU Wi-Fi network and sign in with your HKU Portal UID and password. The eduroam profile is recommended because it also works at other participating universities.
+
+The student SSL VPN lets you reach resources that are restricted to on-campus networks, such as certain library databases, when you are off campus. Install the VPN client from the IT services download page and log in with your Portal credentials. Multi-factor authentication may be required.
+
+Common issues include resetting your Portal password, setting up MFA, and configuring email on a phone. Most of these can be resolved through the HKU Portal self-service options. If a service is down, check the IT status page before contacting the Help Centre.
