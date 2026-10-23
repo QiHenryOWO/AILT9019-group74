@@ -107,3 +107,36 @@ code/
     index.pkl        # generated (gitignored)
   test_questions.json
 ```
+
+## Automated Tests
+
+The project includes a unit test suite covering text chunking, safety refusal logic, and document retrieval. These tests help verify that individual components behave as expected and reduce the risk of regressions when the code is changed.
+
+### What the Tests Cover
+
+- **Text Chunking (`test_chunking.py`):** Tests that text is split into chunks correctly, including chunk overlap, short text, long text, empty input, and whitespace handling.
+- **Safety Refusal (`test_refusal.py`):** Tests that medical, mental-health, legal, and emergency queries trigger the intended refusal behavior, while ordinary university service questions and emergency loan queries are not incorrectly refused.
+- **Document Retrieval (`test_retrieval.py`):** Tests text tokenization, including lowercasing and punctuation removal, as well as retrieval relevance, document ranking, result limits, and handling of empty or unrelated queries.
+
+### Running the Tests
+
+Ensure the project dependencies are installed and the virtual environment is activated. From the project root, run:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+The command discovers and runs the tests in the `tests/` directory and displays the result of each test. A successful run ends with `OK`.
+
+The unit tests are designed to check individual components and do not replace the end-to-end evaluation.
+
+### Unit Tests vs. System Evaluation
+
+The unit test suite checks specific component behaviors. The separate `evaluate.py` script evaluates the integrated system using the project's evaluation questions. Run it independently:
+
+```bash
+python evaluate.py
+```
+
+The project's evaluation target is at least 12 out of 15 questions passing. The unit test results do not automatically affect the evaluation score.
+
