@@ -25,6 +25,30 @@ DISCLAIMER = (
     "(Mental Health) 24h at +852 3917 2889."
 )
 
+
+EXAMPLES = [
+    "How do I book a study room in the Main Library?",
+    "What are the opening hours for CEDARS?",
+    "Where can I get a replacement student card?",
+    "How do I connect to the HKU Wi-Fi on my phone?",
+]
+
+with st.sidebar:
+    st.title("🎓 Navigator Guide")
+    st.markdown(
+        "Ask questions about **Libraries, CEDARS, UHS, IT, Careers, Cards, Registry,** and **Moodle**."
+    )
+    
+    st.markdown("### 💡 Try asking:")
+    for ex in EXAMPLES:
+        if st.button(ex, use_container_width=True):
+            # We store the button click in the session state to process it in the main loop
+            st.session_state.pending_prompt = ex
+
+    st.divider()
+    
+    # Persistent disclaimer in the sidebar
+    st.warning(DISCLAIMER)
 # Build index on first load if it does not exist yet.
 if not os.path.exists(config.INDEX_PATH):
     try:
