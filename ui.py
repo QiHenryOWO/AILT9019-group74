@@ -60,10 +60,12 @@ if not os.path.exists(config.INDEX_PATH):
 st.title("🎓 HKU Student Service Navigator")
 st.caption("Ask about libraries, CEDARS, UHS, IT, Careers, Cards, Registry, Moodle…")
 
+default_q = st.session_state.pop("pending_prompt", "") if "pending_prompt" in st.session_state else ""
+
 q = st.text_input(
     "Your question",
+    value=default_q,
     placeholder="Type a question and press Enter",
-    key="main_input",
 )
 
 if q and q.strip():
