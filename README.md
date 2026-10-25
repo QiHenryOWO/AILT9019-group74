@@ -45,23 +45,23 @@ cp .env.example .env        # then make sure BAILIAN_API_KEY is set (see note be
 ```
 
 ## macOS / Linux
-
+```bash
 code.sh
 python3.12 -m venv .venv          # use your installed 3.10+ interpreter
 source .venv/bin/activate
-
+```
 ## Windows (PowerShell)
-
+```bash
 code.powershell
 py -3.12 -m venv .venv
 .venv\Scripts\Activate.ps1
-
+```
 ## Windows (Command Prompt)
-
+```bash
 code.bat
 py -3.12 -m venv .venv
 .venv\Scripts\activate.bat
-
+```
 If PowerShell refuses to run the activation script, allow it for the current terminal only:
 
 code.powershell
