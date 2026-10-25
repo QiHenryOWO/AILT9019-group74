@@ -44,6 +44,31 @@ pip install -r requirements.txt
 cp .env.example .env        # then make sure BAILIAN_API_KEY is set (see note below)
 ```
 
+## macOS / Linux
+
+code.sh
+python3.12 -m venv .venv          # use your installed 3.10+ interpreter
+source .venv/bin/activate
+
+## Windows (PowerShell)
+
+code.powershell
+py -3.12 -m venv .venv
+.venv\Scripts\Activate.ps1
+
+## Windows (Command Prompt)
+
+code.bat
+py -3.12 -m venv .venv
+.venv\Scripts\activate.bat
+
+If PowerShell refuses to run the activation script, allow it for the current terminal only:
+
+code.powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+Linux: if python3 -m venv reports that ensurepip is missing, install the venv package first, e.g. sudo apt install python3.12-venv (Debian/Ubuntu).
+
 > The repo's local `.env` already contains the group key, but it is gitignored so
 > it will never be pushed. If you clone this elsewhere, copy `.env.example` to
 > `.env` and paste the group key from the teaching-team email.
