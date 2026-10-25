@@ -73,6 +73,35 @@ Linux: if python3 -m venv reports that ensurepip is missing, install the venv pa
 > it will never be pushed. If you clone this elsewhere, copy `.env.example` to
 > `.env` and paste the group key from the teaching-team email.
 
+### Install dependencies
+
+With the virtual environment active on any platform:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+### Create `.env` and add the group API key
+
+A fresh clone does **not** include `.env` because it is gitignored. Create it
+from the template:
+
+**macOS / Linux**
+
+```bash
+cp .env.example .env
+```
+
+**Windows**
+
+```bat
+copy .env.example .env
+```
+
+Open `.env` and replace `your_group_api_key_here` with the group key from the
+teaching-team email. **Never commit `.env` and never share the key outside the
+group.
+
 ## Build the index and run
 
 ```bash
