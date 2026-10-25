@@ -40,32 +40,33 @@ question
 Requires Python 3.10+.
 
 ```bash
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 cp .env.example .env        # then make sure BAILIAN_API_KEY is set (see note below)
 ```
 
 ## macOS / Linux
 ```bash
-code.sh
-python3.12 -m venv .venv          # use your installed 3.10+ interpreter
+python3 -m venv .venv
 source .venv/bin/activate
 ```
+
 ## Windows (PowerShell)
-```bash
-code.powershell
-py -3.12 -m venv .venv
+```powershell
+py -3 -m venv .venv
 .venv\Scripts\Activate.ps1
 ```
+
 ## Windows (Command Prompt)
-```bash
-code.bat
-py -3.12 -m venv .venv
+```bat
+py -3 -m venv .venv
 .venv\Scripts\activate.bat
 ```
+
 If PowerShell refuses to run the activation script, allow it for the current terminal only:
 
-code.powershell
+```powershell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
 
 Linux: if python3 -m venv reports that ensurepip is missing, install the venv package first, e.g. sudo apt install python3.12-venv (Debian/Ubuntu).
 
@@ -100,7 +101,7 @@ copy .env.example .env
 
 Open `.env` and replace `your_group_api_key_here` with the group key from the
 teaching-team email. **Never commit `.env` and never share the key outside the
-group.
+group.**
 
 ## Build the index and run
 
