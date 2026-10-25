@@ -59,6 +59,40 @@ class TestRefusal(unittest.TestCase):
 
         self.assertFalse(refused)
         self.assertEqual(categories, [])
+        
+    def test_uppercase_query_is_refused(self):
+        refused, categories = check_refusal("I HAVE CHEST PAIN")
+
+        self.assertTrue(refused)
+        self.assertIn("medical", categories)
+
+    def test_multiple_categories_are_reported(self):
+        refused, categories = check_refusal(
+            "I have chest pain and want to sue my landlord"
+        )
+
+        self.assertTrue(refused)
+        self.assertIn("medical", categories)
+        self.assertIn("legal", categories)
+        
+    def test_medical_library_is_not_refused(self):
+        refused, categories = check_refusal("Where is the medical library?")
+
+        self.assertFalse(refused)
+        self.assertEqual(categories, [])
+
+    def test_legal_studies_question_is_not_refused(self):
+        refused, categories = check_refusal(
+            "What courses are in the legal studies programme?"
+        )
+
+        self.assertFalse(refused)
+        self.assertEqual(categories, [])
+
+    def test_hotline_contains_official_contacts(self):
+        self.assertIn("999", HOTLINE)
+        self.assertIn("UHS", HOTLINE)
+        self.assertIn("2389 2222", HOTLINE)
 
 
 if __name__ == "__main__":
