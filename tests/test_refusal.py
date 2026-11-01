@@ -1,7 +1,7 @@
 
 import unittest
 
-from src.refusal import check_refusal
+from src.refusal import HOTLINE, check_refusal
 
 
 class TestRefusal(unittest.TestCase):
