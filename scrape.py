@@ -229,6 +229,30 @@ def fetch(url, timeout=25):
     raise last
 
 
+def prune_boilerplate(pages, min_pages=3, short=70):
+    """Drop site-wide menu lines that survive extraction.
+
+    A line under `short` characters that shows up on `min_pages` or more pages
+    is site navigation (CEDARS repeats its whole menu inside <main>), not
+    content, and it dilutes BM25 scores.
+    """
+    counts = {}
+    for _, _, _, text in pages:
+        for line in set(text.splitlines()):
+            if len(line) < short:
+                counts[line] = counts.get(line, 0) + 1
+    nav = {line for line, n in counts.items() if n >= min_pages}
+
+    pruned = []
+    for page_id, title, url, text in pages:
+        kept = [line for line in text.splitlines() if line not in nav]
+        # Trim leading navigation remnants up to the first substantial paragraph.
+        while kept and len(kept[0]) < 60:
+            kept.pop(0)
+        pruned.append((page_id, title, url, "\n".join(kept).strip()))
+    return pruned
+
+
 def dedupe_key(text):
     return re.sub(r"\W+", "", text.lower())[:2000]
 
@@ -242,7 +266,7 @@ def build(check_only=False):
                 with open(path, encoding="utf-8") as fh:
                     existing[dedupe_key(fh.read())] = name
 
-    sources, skipped = [], []
+    collected, skipped = [], []
     for page_id, title, url in SEEDS:
         try:
             page, final_url = fetch(url)
@@ -266,16 +290,23 @@ def build(check_only=False):
             print(f"[SKIP] {page_id:<26} duplicate of {existing[key]}")
             continue
 
-        sources.append({"id": page_id, "title": title, "url": final_url,
-                        "file": f"{page_id}.txt"})
+        collected.append((page_id, title, final_url, text))
         print(f"[OK]   {page_id:<26} {len(text):>5} chars  {final_url}")
+        time.sleep(DELAY)
 
-        if not check_only:
-            os.makedirs(config.PAGES_DIR, exist_ok=True)
+    sources = []
+    if not check_only and collected:
+        collected = prune_boilerplate(collected)
+        os.makedirs(config.PAGES_DIR, exist_ok=True)
+        for page_id, title, final_url, text in collected:
             with open(os.path.join(config.PAGES_DIR, f"{page_id}.txt"), "w",
                       encoding="utf-8") as fh:
                 fh.write(text)
-        time.sleep(DELAY)
+            sources.append({"id": page_id, "title": title, "url": final_url,
+                            "file": f"{page_id}.txt"})
+    else:
+        sources = [{"id": i, "title": t, "url": u, "file": f"{i}.txt"}
+                   for i, t, u, _ in collected]
 
     if check_only:
         print(f"\n{len(sources)} readable, {len(skipped)} skipped (dry run).")

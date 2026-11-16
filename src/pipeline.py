@@ -12,6 +12,8 @@ from .client import get_client
 from .index import retrieve
 import config
 
+MAX_CONTEXT_CHARS = 1500
+
 SYSTEM_PROMPT = (
     "You are the HKU Student Service Information Navigator. "
     "Answer the student's question using ONLY the provided context excerpts. "
@@ -37,8 +39,11 @@ def answer(query):
     index = index_mod.load_index()
     top = retrieve(query, index, top_k=3)
     if top:
+        # Cap each passage: a full page dilutes the answer and slows generation
+        # (measured median 10.7s with whole pages, see report section 3).
         context = "\n\n".join(
-            f"[Source: {d['title']} | {d['url']}]\n{d['text']}" for d in top
+            f"[Source: {d['title']} | {d['url']}]\n{d['text'][:MAX_CONTEXT_CHARS]}"
+            for d in top
         )
     else:
         context = "(No relevant HKU service information was found in the index.)"
