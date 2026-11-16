@@ -103,6 +103,11 @@ Open `.env` and replace `your_group_api_key_here` with the group key from the
 teaching-team email. **Never commit `.env` and never share the key outside the
 group.**
 
+## Project webpage
+
+The public project page is `docs/index.html` (single file, no build step), served by
+GitHub Pages from the `docs/` folder: https://qihenryowo.github.io/AILT9019-group74/
+
 ## Fetch the corpus
 
 The corpus is **live-fetched** from the official HKU sites by `scrape.py`, so every

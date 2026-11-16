@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HKU Student Service Information Navigator · Group 74 · AILT9019</title>
+<meta name="description" content="A grounded, citation-first question answering system over official HKU student-service pages. AILT9019 Group 74 final project." />
+<style>
+  :root {
+    --navy: #1f3864;
+    --ink: #1c2434;
+    --muted: #5b6472;
+    --line: #e3e7ef;
+    --bg: #ffffff;
+    --soft: #f6f7fb;
+    --teal: #0f766e;
+    --amber: #b45309;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--navy); text-decoration: none; border-bottom: 1px solid rgba(31,56,100,.25); }
+  a:hover { border-bottom-color: var(--navy); }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+
+  nav.top {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: saturate(180%) blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav.top .wrap { display: flex; align-items: center; gap: 20px; height: 56px; }
+  nav.top .brand { font-weight: 700; color: var(--navy); font-size: 14px; letter-spacing: .2px; }
+  nav.top .links { margin-left: auto; display: flex; gap: 18px; font-size: 13.5px; }
+  nav.top .links a { border-bottom: none; color: var(--muted); }
+  nav.top .links a:hover { color: var(--navy); }
+
+  header.hero { padding: 64px 0 40px; background:
+      radial-gradient(1200px 400px at 10% -20%, #eef2fa 0%, rgba(255,255,255,0) 60%); }
+  .eyebrow { font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); font-weight: 700; }
+  h1 { font-size: 40px; line-height: 1.15; margin: 10px 0 14px; color: var(--navy); letter-spacing: -0.5px; }
+  .lede { font-size: 18px; color: var(--muted); max-width: 720px; margin: 0 0 24px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 26px; }
+  .chip { font-size: 12.5px; padding: 5px 11px; border-radius: 999px; background: var(--soft);
+          border: 1px solid var(--line); color: var(--muted); }
+  .chip b { color: var(--navy); }
+  .buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn { display: inline-block; padding: 10px 16px; border-radius: 8px; font-size: 14px; font-weight: 600;
+         border: 1px solid var(--navy); color: var(--navy); border-bottom: 1px solid var(--navy); }
+  .btn.primary { background: var(--navy); color: #fff; }
+  .btn:hover { opacity: .9; }
+
+  section { padding: 44px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 24px; margin: 0 0 6px; color: var(--navy); letter-spacing: -0.2px; }
+  .sub { color: var(--muted); margin: 0 0 22px; font-size: 15px; }
+
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .card { border: 1px solid var(--line); border-radius: 12px; padding: 18px; background: #fff; }
+  .card h3 { margin: 0 0 6px; font-size: 15px; color: var(--navy); }
+  .card p { margin: 0; font-size: 14px; color: var(--muted); }
+
+  .chat { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: #fff; }
+  .chat .q { padding: 14px 18px; background: var(--soft); font-size: 14.5px; border-bottom: 1px solid var(--line); }
+  .chat .q span { color: var(--muted); font-size: 12px; display: block; text-transform: uppercase; letter-spacing: .08em; }
+  .chat .a { padding: 18px; font-size: 14.5px; }
+  .chat .src { padding: 14px 18px 18px; border-top: 1px dashed var(--line); font-size: 13px; color: var(--muted); }
+  .chat .src b { color: var(--navy); display: block; margin-bottom: 6px; font-size: 12px;
+                 text-transform: uppercase; letter-spacing: .08em; }
+  .chat .src ul { margin: 0; padding-left: 18px; }
+  .chat .src li { margin: 2px 0; word-break: break-word; }
+
+  ol.steps { list-style: none; counter-reset: s; padding: 0; margin: 0; display: grid;
+             grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  ol.steps li { counter-increment: s; border: 1px solid var(--line); border-radius: 12px; padding: 16px; background: #fff; position: relative; }
+  ol.steps li::before { content: counter(s); position: absolute; top: -10px; left: 14px;
+      width: 22px; height: 22px; border-radius: 50%; background: var(--navy); color: #fff;
+      font-size: 12px; font-weight: 700; display: grid; place-items: center; }
+  ol.steps h3 { margin: 6px 0 4px; font-size: 14px; color: var(--navy); }
+  ol.steps p { margin: 0; font-size: 13px; color: var(--muted); }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--navy); font-size: 12px; text-transform: uppercase; letter-spacing: .07em; }
+  td.num { font-variant-numeric: tabular-nums; font-weight: 600; }
+  .ok { color: var(--teal); }
+  .warn { color: var(--amber); }
+
+  pre { background: #0f172a; color: #e6edf7; padding: 16px; border-radius: 12px; overflow-x: auto;
+        font-size: 12.5px; line-height: 1.55; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .92em; }
+  p code, li code { background: var(--soft); padding: 1px 5px; border-radius: 4px; border: 1px solid var(--line); }
+
+  .safety { border-left: 4px solid var(--amber); background: #fffbf5; border-radius: 0 12px 12px 0; padding: 16px 18px; }
+  .safety h3 { margin: 0 0 6px; font-size: 15px; color: #7c2d12; }
+  .safety ul { margin: 8px 0 0; padding-left: 18px; font-size: 14px; }
+  .limits { font-size: 14px; color: var(--muted); padding-left: 18px; }
+  .limits li { margin: 5px 0; }
+
+  .teammates { display: flex; flex-wrap: wrap; gap: 10px; }
+  .person { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; font-size: 13.5px; }
+  .person b { color: var(--navy); display: block; font-size: 14px; }
+
+  footer { padding: 32px 0 56px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
+
+  @media (max-width: 760px) {
+    h1 { font-size: 30px; }
+    .grid3, ol.steps { grid-template-columns: 1fr; }
+    nav.top .links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <span class="brand">AILT9019 · Group 74</span>
+    <span class="links">
+      <a href="#problem">Problem</a>
+      <a href="#how">How it works</a>
+      <a href="#evidence">Evidence</a>
+      <a href="#safety">Safety</a>
+      <a href="#limits">Limits</a>
+    </span>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">HKU · AI Literacy II · Final project</div>
+    <h1>HKU Student Service<br />Information Navigator</h1>
+    <p class="lede">
+      Ask a question in plain English and get a short answer with the official HKU
+      page it came from — or a clear refusal and the right helpline when the question
+      is medical, legal or an emergency.
+    </p>
+    <div class="chips">
+      <span class="chip"><b>30</b> official HKU pages</span>
+      <span class="chip"><b>8</b> service areas</span>
+      <span class="chip">BM25 retrieval</span>
+      <span class="chip">qwen3.8-flash</span>
+      <span class="chip">Streamlit</span>
+      <span class="chip"><b>29</b> unit tests</span>
+    </div>
+    <div class="buttons">
+      <a class="btn primary" href="https://github.com/QiHenryOWO/AILT9019-group74">Repository</a>
+      <a class="btn" href="#evidence">Evaluation evidence</a>
+    </div>
+  </div>
+</header>
+
+<section id="problem">
+  <div class="wrap">
+    <h2>Why this exists</h2>
+    <p class="sub">HKU student services are published, but not where a student's question lands.</p>
+    <div class="grid3">
+      <div class="card">
+        <h3>Scattered by office, not by question</h3>
+        <p>Visa, housing, money, health, IT and deadlines each live on a different site
+           with its own vocabulary. "Can I get a loan?" belongs to no office name a
+           first-year would guess.</p>
+      </div>
+      <div class="card">
+        <h3>Timing makes errors expensive</h3>
+        <p>A missed fee deadline or a wrong visa step is not repaired by rereading a page
+           later. Students ask friends, or ask nobody, close to the deadline.</p>
+      </div>
+      <div class="card">
+        <h3>Some questions must not be answered</h3>
+        <p>Chest pain, suicidal thoughts or a landlord dispute should not get a chatbot's
+           improvised advice. Those turns go straight to a human contact.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="sub">Four stages, and one of them is a deliberate dead end.</p>
+    <ol class="steps">
+      <li>
+        <h3>Guard</h3>
+        <p>Rule-based check for medical, mental-health, legal and emergency questions.
+           Word boundaries keep "medical library" safe.</p>
+      </li>
+      <li>
+        <h3>Retrieve</h3>
+        <p>BM25 over 30 curated pages, written in this repository. The page title is
+           scored as its own field; the top three pages become context.</p>
+      </li>
+      <li>
+        <h3>Generate</h3>
+        <p>A grounded prompt limits the model to the retrieved text and requires a
+           source line. If the pages do not answer it, the model must say so.</p>
+      </li>
+      <li>
+        <h3>Cite</h3>
+        <p>Sources are attached from the retrieved documents, not from the model's
+           text, so a citation cannot be invented.</p>
+      </li>
+    </ol>
+
+    <div class="chat" style="margin-top:26px">
+      <div class="q"><span>Example session · rebuilt from a real run</span>
+        How do I book a group study room at the library?</div>
+      <div class="a">
+        You can book a study or discussion room through the HKU Libraries
+        <em>Booking a Space or Study Room</em> page. The page lists bookable spaces such as
+        Main Library AV group viewing rooms and Tin Ka Ping Education Library discussion
+        rooms, and links to the booking form.
+      </div>
+      <div class="src">
+        <b>Sources</b>
+        <ul>
+          <li>HKU Libraries — Booking a Space or Study Room ·
+            <a href="https://lib.hku.hk/general/e-form/book-a-space.html">lib.hku.hk/general/e-form/book-a-space.html</a></li>
+          <li>HKU Libraries — Services Overview ·
+            <a href="https://lib.hku.hk/">lib.hku.hk</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="evidence">
+  <div class="wrap">
+    <h2>What we measured</h2>
+    <p class="sub">Numbers below come from <code>evaluate.py</code> and the unit suite in the
+      repository; they are reproducible without reading our screenshots.</p>
+    <table>
+      <thead>
+        <tr><th>Measure</th><th>Result</th><th>How it is checked</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Behaviour: answer vs refuse, 15 fixed questions</td>
+            <td class="num ok">15 / 15</td>
+            <td><code>python evaluate.py</code></td></tr>
+        <tr><td>Retrieval top-1, 8 questions with a known target page</td>
+            <td class="num">5 / 8</td>
+            <td><code>python evaluate.py --no-llm</code></td></tr>
+        <tr><td>Flat BM25 baseline, same questions</td>
+            <td class="num">5 / 8</td>
+            <td>same run, title weight 0</td></tr>
+        <tr><td>Unit tests (chunking, guard, retrieval, pipeline wiring)</td>
+            <td class="num ok">29 / 29</td>
+            <td><code>python -m unittest discover -s tests</code></td></tr>
+        <tr><td>End-to-end latency, 3 queries</td>
+            <td class="num warn">7.0 s mean</td>
+            <td>timed runs, capped context</td></tr>
+      </tbody>
+    </table>
+
+    <p class="sub" style="margin-top:22px">
+      <b>One failure we can explain.</b> "Emergency loan" retrieves the
+      <em>Overseas Emergency Assistance</em> page instead of <em>Financial Assistance</em>:
+      "emergency" repeats across the crisis page, and lexical matching cannot tell a
+      financial product from a crisis. We report it rather than hide it, because a
+      confident answer pointing at the wrong office is the worst failure this system
+      can produce.
+    </p>
+<p class="sub" style="margin:0 0 8px">Excerpt of the run (long questions trimmed to fit):</p>
+<pre>Retrieval top-1 (questions with a known target page):
+question                                             expected          got
+How do I book a group study room at the library?      library_spaces    library_spaces   ok
+How can I apply for an emergency loan ...?            cedars_financial  cedars_overseas_emergency   MISS
+Where can I find off-campus accommodation ...?        cedars_ssi        cedars_ssi       ok
+How do I connect to HKU Wi-Fi and the student VPN?    its_wifi          its_wifi         ok
+
+Behaviour: 15/15 (target >= 12 / 15); retrieval top-1 5/8.</pre>
+  </div>
+</section>
+
+<section id="safety">
+  <div class="wrap">
+    <h2>Safety boundary</h2>
+    <p class="sub">The system is built to stop, not to improvise.</p>
+    <div class="safety">
+      <h3>It does not give medical, mental-health, legal or emergency advice</h3>
+      <p>When a question falls in those four categories, retrieval and the language model are
+         skipped entirely. The student receives fixed official contacts instead:</p>
+      <ul>
+        <li>Emergency: <b>999</b></li>
+        <li>University Health Service · CEDARS counselling</li>
+        <li>SENDA (equal opportunities) · <b>2389 2222</b></li>
+      </ul>
+      <p style="margin:10px 0 0;font-size:14px">Skipping the model is a design decision: no
+         generation means no chance to invent triage.</p>
+    </div>
+  </div>
+</section>
+
+<section id="limits">
+  <div class="wrap">
+    <h2>Limitations we would fix next</h2>
+    <ul class="limits">
+      <li><b>English only.</b> Tokenisation is English; a Chinese question will usually retrieve nothing.</li>
+      <li><b>Missing pages.</b> Several CEDARS pages and the Registry site are JavaScript-rendered or
+          unreachable, so housing, student-card and transcript questions honestly return
+          "I do not have that information".</li>
+      <li><b>Lexical, not semantic.</b> Synonyms ("loan" vs "financial assistance") break matching;
+          embeddings or query expansion would help.</li>
+      <li><b>Curated subset.</b> 30 pages cover eight services, not every HKU office, and pages age.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="run">
+  <div class="wrap">
+    <h2>Run it yourself</h2>
+    <p class="sub">Fresh clone, no API key needed for the retrieval check.</p>
+<pre>git clone https://github.com/QiHenryOWO/AILT9019-group74
+cd AILT9019-group74
+python -m pip install -r requirements.txt
+cp .env.example .env          # add the group key for generation
+python ingest.py              # Index built: 30 docs
+python evaluate.py --no-llm   # retrieval only
+python evaluate.py            # 15 questions, uses API credits
+streamlit run ui.py</pre>
+  </div>
+</section>
+
+<section id="team">
+  <div class="wrap">
+    <h2>Team 74</h2>
+    <p class="sub">AILT9019 AI Literacy II · HKU · submitted 20 November 2026.</p>
+    <div class="teammates">
+      <div class="person"><b>Qi Gongfu</b>Pipeline, retrieval, corpus, evaluation, this page</div>
+      <div class="person"><b>Gao Yaqi</b>Proposal, demo recording, presentation</div>
+      <div class="person"><b>Arora Ekaansh</b>Unit tests, README testing guide, presentation</div>
+      <div class="person"><b>Chan Chester</b>Interface, installation docs, presentation</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Coursework for AILT9019 AI Literacy for Computing and Data Science, The University of Hong Kong.
+    Corpus pages are public HKU web pages, fetched once and cited by URL.
+    Source: <a href="https://github.com/QiHenryOWO/AILT9019-group74">github.com/QiHenryOWO/AILT9019-group74</a>.
+  </div>
+</footer>
+
+</body>
+</html>
