@@ -1,0 +1,49 @@
+HKUGenAI Tools » Information Technology Services Skip to content
+Home > Services > AI as a Service > HKUGenAI Tools
+HKUGenAI Tools
+ITS provides the university-wide HKU GenAI web application and HKU ITS API Developer Portal for HKU staff and students to access generative AI resources for their teaching and learning, work, and research tasks.
+HKU GenAI App
+API Developer Portal (Staff)
+API Developer Portal (Student)
+Models
+Microsoft Foundry
+ChatGPT and GPT Image
+DeepSeek
+Gemini Enterprise Agent Platform
+Gemini and Nano Banana
+GLM
+Consult the HKU GenAI App and HKU ITS API Developer Portal for the latest model listing and file support information.
+Quotas
+To provide a reasonable level of access and support fair use, staff can make up to 900 requests to text models per month and 70 requests to image models per week, unless otherwise stated in the HKU GenAI App’s information panel. Additional rate limits and daily quotas apply as described in the API Developer Portal.
+Students have monthly 500k AI Credits which will be replenished on the first day of each month. AI Credits apply across both HKU GenAI App and the API Developer Portal.
+Students can purchase additional AI Credits here (sign-in required using the Profile icon in the top right corner). An official computer-generated receipt will be issued upon successful transactions. For research reimbursements, students should first seek confirmation with their departments/faculties before making purchases.
+Staff and RPG students may also apply for a self-pay Azure subscription for additional ChatGPT/DeepSeek usage for their faculties/departments. Contact ITS Help Desk for details and application. Not applicable to Gemini, GLM, and Qwen models.
+AI plagiarism and research integrity
+Staff and students may refer to university policies on generative AI, notably
+Policy on Use of Generative Artificial Intelligence for Teaching and Learning
+Guidelines on the Responsible Use of Generative AI in Research at The University of Hong Kong
+Students should note additional regulations on generative AI use from their course instructors. Failure to comply with them may result in plagiarism and disciplinary actions.
+Privacy
+The HKU GenAI App provides two options to save user chats, images, topics, notes, files, and system prompts. To avoid data retention, use Temporary Chat at the top right or turn on Temporary Chat by Default in Settings > Interface > Chat.
+Users may choose to save content in the browser storage.
+Users may also choose to save content in the ITS-maintained database. If you do not wish that the content is retained in the database, do not choose database saving.
+Also refer to the following privacy and data retention policies for both HKU GenAI App and HKU ITS API Developer Portal.
+HKU ITS Privacy Policy Statements
+Data, privacy, and security for Models sold by Azure in Microsoft Foundry
+Gemini Enterprise Agent Platform and zero data retention
+Amazon Bedrock security, privacy, and responsible AI
+Tavily’s privacy practices
+Users are strictly advised against sharing personally identifiable information (PII) or confidential University information with web-search-enabled prompts. Information submitted may be retained and processed by the external web search provider for service operation.
+ITS has a dashboard to monitor statistical usage of HKU GenAI App and HKU ITS API Developer Portal.
+Data Protection
+If you use personal data, whether your own or that of others, in your interactions with HKU GenAI App and APIs in HKU ITS API Developer Portal, you are responsible for
+obtaining explicit consent from the data subject(s) for the use and processing of their data with AI,
+exercising data masking practices, and
+ensuring compliance with applicable data protection guidelines, frameworks, and governance policies.
+The Data Protection Office provides possible references at https://dpo.hku.hk/. Notably,
+HKU GenAI guidelines on Protection of Personal Data Privacy
+PCPD AI Framework
+Content safety
+There is content filtering for hate, sexual, violent, and self-harm outputs. For more information, see the Microsoft Foundry, Google, and AWS Bedrock documentations.
+Copyright
+HKU Libraries have provided a guide to copyright related to AI-generated content.

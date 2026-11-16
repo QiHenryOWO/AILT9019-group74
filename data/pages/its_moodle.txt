@@ -1,0 +1,29 @@
+Moodle » Information Technology Services Skip to content
+Home > Services > Teaching & Learning > Moodle
+Moodle
+Moodle is the central Learning Management System for supporting teaching and learning.  It integrates with the Student Information System (SIS) and Moodle courses are automatically created for all academic courses defined under SIS.  Moodle is a rich e-learning platform supporting the functions of Forum, Assignments, Choice for Tutorial Selection, etc. and is integrated with Turnitin plugin for plagiarism checking.
+Staff
+Allows you to create powerful, flexible, and engaging online learning content for supporting your teaching.
+Can access via
+Go to HKU Portal > “My eLearning” tab to access the Moodle courses
+You can
+Upload course materials, create assignments and change course layout
+Create Turnitin assignment
+Manage grades under gradebook page in a Moodle course
+User Guides
+FAQ
+Students
+You may enjoy the interactive Moodle online learning experience that the central Moodle system brings you.
+Can access via
+Go to HKU Portal > “My eLearning” tab to access the Moodle courses
+You can
+Click the file name in the course content page to download the file on your PC.
+Click the activity name (e.g. assignment)in the course content page to enter the activity’s page (e.g. to submit your paper).
+User Guides
+FAQ
+Getting Help
+If you have any enquiries while using Moodle, there are several approaches for you to get a solution.
+Get help from Moodle document.
+You can find the Moodle official support document in the following https://docs.moodle.org/401/en/Main_page.
+Submit your enquiry to Self-Service Report.
+Send your enquiry to the email ithelp@hku.hk Or helpdesk hotline: 3917 0123

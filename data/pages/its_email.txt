@@ -1,0 +1,43 @@
+Email and Calendar » Information Technology Services Skip to content
+Home > Services > Email & Communications > Email and Calendar
+Email and Calendar
+Email and calendar service is provided for use by all University members. It is supported by both in-house email systems and outsourced email platform with anti-spam and anti-virus protection.
+Staff
+Supported by a number of in-house systems running on Microsoft Exchange (HKUCC1 or HKUCC-COM@hku.hk). Each account is allocated with 15GB disk quota (email archive is available when disk quota exceeds) with accessibility to Global Address List (GAL).
+Can access via
+HKU Portal (“MyEmail” tab)
+webmail.hku.hk
+Microsoft Outlook or other supported mail clients or apps (Outlook or OWA)
+Setup Guides
+Students
+Powered by Microsoft from 1 June 2022 (@connect.hku.hk).
+Can access via
+HKU Portal (“MyEmail” tab)
+webmail.hku.hk
+Other supported email clients or apps (Outlook or OWA)
+Setup Guides
+Graduates
+Graduates can activate their HKU Graduate email accounts at @graduate.hku.hk.
+Recommended mailbox migration tool for Connect Graduate users (@connect.hku.hk) or Graduate users (@graduate.hku.hk) : VaultMe
+Can access via
+webmail.hku.hk
+Setup Guides
+Retirees
+Retirees can continue using their staff email accounts (@hku.hk) and is subject to annual renewal.
+Can access via
+HKU Portal (“MyEmail” tab)
+webmail.hku.hk/
+Microsoft Outlook or other supported mail clients or apps (Outlook or OWA)
+Honorary Appointees
+Departments can apply for an HKU Poral account for use by their honorary appointees via CF-106b.
+Can access via
+HKU Portal (“MyEmail” tab)
+webmail.hku.hk/
+Microsoft Outlook or other supported mail clients or apps (Outlook or OWA)
+Departmental
+Account Holders
+Department can apply for a departmental account for projects or collaboration works via CF-106b.
+Can access via
+HKU Portal (“MyEmail” tab)
+webmail.hku.hk/
+Microsoft Outlook or other supported mail clients or apps (Outlook or OWA)

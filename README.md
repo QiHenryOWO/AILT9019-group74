@@ -103,6 +103,21 @@ Open `.env` and replace `your_group_api_key_here` with the group key from the
 teaching-team email. **Never commit `.env` and never share the key outside the
 group.**
 
+## Fetch the corpus
+
+The corpus is **live-fetched** from the official HKU sites by `scrape.py`, so every
+page in `data/pages/` carries a real source URL.
+
+```bash
+python scrape.py            # fetch ~30 pages -> data/pages/*.txt + data/sources.json
+python scrape.py --check    # dry run: report what would be fetched, write nothing
+```
+
+`scrape.py` uses only the standard library plus `requests`, drops pages with fewer
+than 400 characters of body text (JavaScript-only pages), de-duplicates near-identical
+pages, and waits 1 second between requests. Pages that fail are skipped and listed in
+the run summary rather than padded or invented.
+
 ## Build the index and run
 
 ```bash
@@ -134,8 +149,12 @@ instructed never to give such advice.
 
 - Queries are matched in **English**; Chinese/ mixed-language matching is a
   should-have extension (lexical tokenisation is English-oriented).
-- The corpus in `data/pages/` is **curated SAMPLE text** with real HKU URLs. Before
-  final submission, replace it with live-fetched content from the same pages.
+- The corpus is live-fetched from 30 official HKU pages (`python scrape.py`), but
+  several student-service pages are JavaScript-rendered and could not be captured
+  (e.g. CEDARS housing, the one-on-one career coaching page). Those topics fall back
+  to broader pages, which weakens retrieval precision for them.
+- Some queries (transcripts, lost student card) have no dedicated page yet, so the
+  bot correctly says it lacks information instead of guessing.
 - Retrieval is lexical (BM25), not semantic; for higher recall, a future version
   could add an external embedding model if the plan allows.
 
@@ -144,6 +163,7 @@ instructed never to give such advice.
 ```
 code/
   config.py
+  scrape.py          # fetch the live corpus from HKU sites
   ingest.py          # build BM25 index
   app.py             # single-question demo
   evaluate.py        # 15-question evaluator
@@ -158,14 +178,18 @@ code/
     pipeline.py      # end-to-end
   data/
     sources.json
-    pages/*.txt      # curated corpus
+    pages/*.txt      # live-fetched corpus (30 pages)
     index.pkl        # generated (gitignored)
   test_questions.json
 ```
 
 ## Automated Tests
 
-The project includes a unit test suite covering text chunking, safety refusal logic, and document retrieval. These tests help verify that individual components behave as expected and reduce the risk of regressions when the code is changed.
+The project includes a unit test suite covering text chunking, safety refusal logic, pipeline wiring, and document retrieval. These tests help verify that individual components behave as expected and reduce the risk of regressions when the code is changed.
+
+```bash
+python -m unittest discover -s tests -v      # 29 tests, no API key needed
+```
 
 ### What the Tests Cover
 

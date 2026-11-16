@@ -1,62 +1,182 @@
 [
   {
-    "id": "library_study_rooms",
-    "title": "HKU Libraries - Study Rooms & Facilities",
-    "url": "https://lib.hku.hk/services/",
-    "file": "library_study_rooms.txt"
+    "id": "library_spaces",
+    "title": "HKU Libraries - Booking a Space or Study Room",
+    "url": "https://lib.hku.hk/general/e-form/book-a-space.html",
+    "file": "library_spaces.txt"
+  },
+  {
+    "id": "library_services",
+    "title": "HKU Libraries - Services Overview",
+    "url": "https://lib.hku.hk/",
+    "file": "library_services.txt"
   },
   {
     "id": "cedars_financial",
     "title": "CEDARS - Financial Assistance",
-    "url": "https://www.cedars.hku.hk/financial",
+    "url": "https://www.cedars.hku.hk/ssi/finances",
     "file": "cedars_financial.txt"
   },
   {
-    "id": "cedars_accommodation",
-    "title": "CEDARS - Accommodation Service",
-    "url": "https://www.cedars.hku.hk/acc",
-    "file": "cedars_accommodation.txt"
+    "id": "cedars_ssi",
+    "title": "CEDARS - Student Support and Inclusion",
+    "url": "https://www.cedars.hku.hk/ssi",
+    "file": "cedars_ssi.txt"
   },
   {
-    "id": "uhs_general",
-    "title": "University Health Service (UHS)",
+    "id": "cedars_amenities",
+    "title": "CEDARS - Student Amenities",
+    "url": "https://www.cedars.hku.hk/ssi/student-amenities",
+    "file": "cedars_amenities.txt"
+  },
+  {
+    "id": "cedars_mind_wellbeing",
+    "title": "CEDARS - Mind and Wellbeing",
+    "url": "https://www.cedars.hku.hk/mwb",
+    "file": "cedars_mind_wellbeing.txt"
+  },
+  {
+    "id": "cedars_careers",
+    "title": "CEDARS - Careers and Employability",
+    "url": "https://www.cedars.hku.hk/careers",
+    "file": "cedars_careers.txt"
+  },
+  {
+    "id": "cedars_overseas_emergency",
+    "title": "CEDARS - Overseas Emergency Assistance",
+    "url": "https://www.cedars.hku.hk/overseasemergencyassistance",
+    "file": "cedars_overseas_emergency.txt"
+  },
+  {
+    "id": "cedars_cymcc",
+    "title": "CEDARS - Chong Yuet Ming Cultural Centre",
+    "url": "https://www.cedars.hku.hk/CYMCC",
+    "file": "cedars_cymcc.txt"
+  },
+  {
+    "id": "uhs_overview",
+    "title": "University Health Service - Overview",
     "url": "https://www.uhs.hku.hk/",
-    "file": "uhs_general.txt"
+    "file": "uhs_overview.txt"
   },
   {
-    "id": "uhs_counselling",
-    "title": "UHS - Counselling Service",
-    "url": "https://www.uhs.hku.hk/counselling/",
-    "file": "uhs_counselling.txt"
+    "id": "uhs_medical",
+    "title": "University Health Service - Medical Services",
+    "url": "https://www.uhs.hku.hk/medical/",
+    "file": "uhs_medical.txt"
   },
   {
-    "id": "its_help",
-    "title": "IT Help Centre - Wi-Fi / VPN / Email",
-    "url": "https://www.its.hku.hk/help/",
-    "file": "its_help.txt"
+    "id": "uhs_charges",
+    "title": "University Health Service - Medical Charges",
+    "url": "https://www.uhs.hku.hk/medical-charges/",
+    "file": "uhs_charges.txt"
   },
   {
-    "id": "careers",
-    "title": "Careers and Placement Centre",
-    "url": "https://careers.hku.hk/",
-    "file": "careers.txt"
+    "id": "uhs_dental",
+    "title": "University Health Service - Dental Appointments",
+    "url": "https://www.uhs.hku.hk/dental-appointment/",
+    "file": "uhs_dental.txt"
   },
   {
-    "id": "cedars_student_card",
-    "title": "CEDARS - Student Card & Octopus",
-    "url": "https://www.cedars.hku.hk/student.html",
-    "file": "cedars_student_card.txt"
+    "id": "uhs_emergency",
+    "title": "University Health Service - Emergency Services",
+    "url": "https://www.uhs.hku.hk/emergency-services/",
+    "file": "uhs_emergency.txt"
   },
   {
-    "id": "registry_records",
-    "title": "Registry - Academic Records & Transcripts",
-    "url": "https://www.reg.hku.hk/",
-    "file": "registry_records.txt"
+    "id": "uhs_nursing",
+    "title": "University Health Service - Nursing Services",
+    "url": "https://www.uhs.hku.hk/nursing-services/",
+    "file": "uhs_nursing.txt"
   },
   {
-    "id": "moodle",
-    "title": "Moodle - Learning Management System",
-    "url": "https://moodle.hku.hk/",
-    "file": "moodle.txt"
+    "id": "uhs_eligibility",
+    "title": "University Health Service - Eligibility",
+    "url": "https://www.uhs.hku.hk/eligibility/",
+    "file": "uhs_eligibility.txt"
+  },
+  {
+    "id": "its_wifi",
+    "title": "ITS - HKU Wi-Fi",
+    "url": "https://its.hku.hk/services/network-connectivity/wifi/",
+    "file": "its_wifi.txt"
+  },
+  {
+    "id": "its_vpn",
+    "title": "ITS - HKU VPN",
+    "url": "https://its.hku.hk/services/network-connectivity/hkuvpn/",
+    "file": "its_vpn.txt"
+  },
+  {
+    "id": "its_moodle",
+    "title": "ITS - Moodle (Learning Management System)",
+    "url": "https://its.hku.hk/services/teaching-learning/moodle/",
+    "file": "its_moodle.txt"
+  },
+  {
+    "id": "its_portal_account",
+    "title": "ITS - HKU Portal Account",
+    "url": "https://its.hku.hk/services/accounts-mfa/hku-portal-account/",
+    "file": "its_portal_account.txt"
+  },
+  {
+    "id": "its_email",
+    "title": "ITS - Email and Calendar",
+    "url": "https://its.hku.hk/services/email-communications/email-and-calendar/",
+    "file": "its_email.txt"
+  },
+  {
+    "id": "its_service_desk",
+    "title": "ITS - Service Desk",
+    "url": "https://its.hku.hk/service-desk/",
+    "file": "its_service_desk.txt"
+  },
+  {
+    "id": "its_genai",
+    "title": "ITS - HKU GenAI Platform",
+    "url": "https://its.hku.hk/services/ai-as-a-service/hku-genai/",
+    "file": "its_genai.txt"
+  },
+  {
+    "id": "hku_current_students",
+    "title": "HKU - Current Students",
+    "url": "https://www.hku.hk/en/current-students",
+    "file": "hku_current_students.txt"
+  },
+  {
+    "id": "hku_campus_facilities",
+    "title": "HKU - Campus Facilities",
+    "url": "https://www.hku.hk/en/campus-life/campus-facilities",
+    "file": "hku_campus_facilities.txt"
+  },
+  {
+    "id": "hku_fees_scholarships",
+    "title": "HKU - Tuition Fees and Scholarships",
+    "url": "https://www.hku.hk/en/admission-aid/tuition-fee-scholarships",
+    "file": "hku_fees_scholarships.txt"
+  },
+  {
+    "id": "hku_admission_aid",
+    "title": "HKU - Admissions and Financial Aid",
+    "url": "https://www.hku.hk/en/admission-aid",
+    "file": "hku_admission_aid.txt"
+  },
+  {
+    "id": "its_services_overview",
+    "title": "ITS - Services Overview",
+    "url": "https://its.hku.hk/services-main/",
+    "file": "its_services_overview.txt"
+  },
+  {
+    "id": "cedars_mtr_travel",
+    "title": "CEDARS - MTR Student Travel Scheme",
+    "url": "https://www.cedars.hku.hk/ssi/mtrstudenttravel",
+    "file": "cedars_mtr_travel.txt"
+  },
+  {
+    "id": "lib_collection_development",
+    "title": "HKU Libraries - Collection Development",
+    "url": "https://lib.hku.hk/cdd/index.html",
+    "file": "lib_collection_development.txt"
   }
 ]

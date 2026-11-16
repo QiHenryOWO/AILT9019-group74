@@ -1,9 +1,0 @@
-[SAMPLE CURATED EXCERPT - replace with live-fetched content before final submission]
-Service: Moodle - Learning Management System
-Source URL: https://moodle.hku.hk/
-
-Moodle is HKU's central learning management system. Course materials, announcements, assignments, quizzes, and grades are posted on each course's Moodle page by the instructor. Log in with your HKU Portal UID and password.
-
-Check each course Moodle page regularly because assignment deadlines and announcements are published there rather than by email. You can enable Moodle notification emails so you do not miss a posted grade or a forum reply.
-
-If Moodle is slow or unavailable from off campus, try the HKU student VPN first, then check the IT status page for known outages. Some courses also use supplementary platforms, but Moodle remains the official record of grades and submitted work, so confirm deadlines there.

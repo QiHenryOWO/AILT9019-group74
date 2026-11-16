@@ -1,0 +1,20 @@
+WiFi » Information Technology Services Skip to content
+Home > Services > Network & Connectivity > WiFi
+WiFi
+HKU
+For HKU staff and students
+Procedure to configure
+eduroam
+For members of other local and overseas universities (eduroam members) when they visit HKU (reciprocal arrangement for HKU staff and students when they visit the eduroam member institutions.)
+Procedure to configure
+Universities via
+CSL
+For HKU staff and students at these WiFi hotspots in town
+Procedure to configure access to CSL WiF
+Wi-Fi.HK via HKU
+For visitors, a WiFi network that requires no login and configuration and is operating in unsecured mode with limited bandwidth
+Procedure to configure
+HKU-IoT
+For connecting WiFi devices which do not support 802.1x login and only support Pre-shared Key (PSK) (e.g. IoT devices such as temperature sensors, etc).
+Users (staff and departments) are required to register their MAC addresses of the devices (and assigned with suitable IoT password) before connection.
+HKU-IoT MAC Registration

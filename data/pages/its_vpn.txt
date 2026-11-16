@@ -1,0 +1,6 @@
+HKU Virtual Private Network (HKUVPN) » Information Technology Services Skip to content
+Home > Services > Network & Connectivity > HKU Virtual Private Network (HKUVPN)
+HKU Virtual Private Network (HKUVPN)
+HKUVPN is a channel for accessing the campus network when staff, students, honorary appointees and departmental account holders are outside the University network. It supports a secure connection for them to access the IT systems and electronic resources in the same way as if they are within the campus network.
+Multi-Factor Authentication (MFA) is required for accessing HKUVPN.
+Configuration and Connection Procedures
