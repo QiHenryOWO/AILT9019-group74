@@ -15,5 +15,6 @@ def get_client():
     global _CLIENT
     if _CLIENT is None:
         # Sequential calls only (no high concurrency) to avoid key suspension.
-        _CLIENT = OpenAI(api_key=config.API_KEY, base_url=config.BASE_URL)
+        _CLIENT = OpenAI(api_key=config.require_api_key(),
+                        base_url=config.BASE_URL)
     return _CLIENT

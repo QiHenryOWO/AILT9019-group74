@@ -28,7 +28,17 @@ PAGES_DIR = os.path.join(DATA_DIR, "pages")
 SOURCES_JSON = os.path.join(DATA_DIR, "sources.json")
 INDEX_PATH = os.path.join(DATA_DIR, "index.pkl")
 
-if not API_KEY or API_KEY == "your_group_api_key_here":
-    raise RuntimeError(
-        "BAILIAN_API_KEY is not set. Copy .env.example to .env and add your group key."
-    )
+def require_api_key():
+    """Return the key, or explain how to set it.
+
+    Deliberately not checked at import time: the offline parts of this project
+    (indexing, retrieval evaluation, the unit tests) must run on a fresh clone
+    with no credentials, so a marker can verify the pipeline without a key.
+    """
+    if not API_KEY or API_KEY == "your_group_api_key_here":
+        raise RuntimeError(
+            "BAILIAN_API_KEY is not set. Copy .env.example to .env and add your "
+            "group key. Offline checks need no key: python ingest.py, "
+            "python evaluate.py --no-llm, python -m unittest discover -s tests"
+        )
+    return API_KEY
