@@ -103,6 +103,20 @@ Open `.env` and replace `your_group_api_key_here` with the group key from the
 teaching-team email. **Never commit `.env` and never share the key outside the
 group.**
 
+## Checking this project without an API key
+
+The group key is not shared with markers, so the offline path is the one to run first.
+It needs no credentials and no network:
+
+```bash
+python ingest.py              # Index built: 30 docs
+python evaluate.py --no-llm   # retrieval top-1, plus the flat BM25 baseline
+python -m unittest discover -s tests   # 29 tests
+```
+
+Live generation (`python app.py "..."`, `streamlit run ui.py`) additionally needs
+`BAILIAN_API_KEY` in `.env`; without it the CLI stops with one line explaining how to set it.
+
 ## Project webpage
 
 The public project page is `docs/index.html` (single file, no build step), served by
