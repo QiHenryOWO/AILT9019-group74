@@ -17,7 +17,16 @@ def main():
     else:
         q = input("Ask a question about HKU student services: ").strip()
 
-    result = pipeline_mod.answer(q)
+    try:
+        result = pipeline_mod.answer(q)
+    except RuntimeError as exc:  # missing key: explain, do not dump a traceback
+        print(f"\nCannot answer: {exc}")
+        return 1
+    except Exception as exc:  # network or API failure: say what failed
+        print(f"\nThe model call failed ({type(exc).__name__}: {exc}).")
+        print("Retrieval and the offline checks still work: "
+              "python evaluate.py --no-llm")
+        return 1
 
     print("\n=== QUESTION ===")
     print(q)
@@ -31,7 +40,8 @@ def main():
 
     if result.get("refused"):
         print("\n[Refusal guard triggered:", ", ".join(result["categories"]), "]")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
